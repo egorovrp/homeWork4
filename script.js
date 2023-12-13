@@ -9,13 +9,24 @@
 // …
 // 10 – четное число
 
-
+for (let i = 0; i < 11; i++) {
+    if (i === 0) {
+        console.log(`${i} - это ноль`);
+    }
+    else if (i % 2 === 1) {
+        console.log(`${i} - нечётное число`);
+    } else {
+        console.log(`${i} - чётное число`);
+    }
+}
 
 // Задание 2
 // Дан массив [1, 2, 3, 4, 5, 6, 7]
 // Сделайте из этого массива следующий [1, 2, 3, 6, 7]
 
-
+let arr = [1, 2, 3, 4, 5, 6, 7];
+arr.splice(3, 2);
+console.log(arr);
 
 // Задание 3
 // Используя Math.random() вам необходимо генерировать цифры от 0 до 9, и создать массив состоящий из 5 таких элементов
@@ -23,7 +34,25 @@
 // 2. Найти минимальное число
 // 3. Найти есть ли в этом массиве число 3
 
+let array = [];
+for (let i = 0; i < 5; i++) {
+    array[i] = Math.round(Math.random(0, 9) * 10);
+}
+console.log(array);
 
+let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+console.log(`Сумма чисел в Вашем массиве равна: ${sum}`);
+
+let countNumberThree = 0;
+    for( let i = 0; i < array.length; i++){
+        if(array[i] === 3){
+        countNumberThree ++;
+        }
+    }
+console.log(`Число 3 в Вашем массиве встречается ${countNumberThree} раз(а)`);
 
 // *Необязательное задание. *
 // Необходимо вывести горку в консоль (используя цикл for), как показано на рисунке, только у вашей горки должно быть 20 рядов, а не 5:
@@ -33,3 +62,9 @@
 // xxx
 // xxxx
 // xxxxx
+
+let stringX = ""
+for (let i = 0; i < 20; i++) {
+    stringX += 'x';
+    console.log(stringX);
+}
